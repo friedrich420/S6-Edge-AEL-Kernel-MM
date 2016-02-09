@@ -205,10 +205,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # "make" in the configured kernel build directory always uses that.
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
-<<<<<<< HEAD
-ARCH		= arm64
-CROSS_COMPILE =$(CCACHE) /home/friedrich420/kernel/aarch64-linux-gnu-5.3/bin/aarch64-
-=======
+
 #ARCH		?= $(SUBARCH)
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
 ARCH		= arm64
@@ -217,7 +214,6 @@ CROSS_COMPILE = $(CCACHE) $(TOOLCHAIN_DIR)
 else
 CROSS_COMPILE = $(TOOLCHAIN_DIR)
 endif
->>>>>>> 51cc38e... Build: add option for building kernel with graphite optimizations and ccache
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -443,13 +439,11 @@ KBUILD_CFLAGS   := -DNDEBUG $(GRAPHITE) -w -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration -fno-pic \
 		   -Wno-format-security -ffast-math \
 		   -fno-delete-null-pointer-checks \
-<<<<<<< HEAD
 		   -Werror -Wno-error=unused-variable -Wno-error=unused-function \
 		   -std=gnu89 -Wno-discarded-array-qualifiers -Wno-logical-not-parentheses -Wno-array-bounds -Wno-switch -Wno-unused-variable \
 		   -Wno-switch-bool \
 		   -Wno-switch-enum \
 		   -fdiagnostics-show-option -Werror
-=======
 		   -fdiagnostics-show-option \
 		   -pipe  -funswitch-loops -fpredictive-commoning -fgcse-after-reload \
 		   -ftree-loop-distribution -ftree-loop-if-convert -fivopts -fipa-pta -fira-hoist-pressure \
@@ -473,7 +467,7 @@ KBUILD_CFLAGS   := -DNDEBUG -w -Wstrict-prototypes -Wno-trigraphs \
 		   -std=gnu89 -Wno-discarded-array-qualifiers -Wno-logical-not-parentheses -Wno-array-bounds -Wno-switch -Wno-unused-variable \
 		   -march=armv8-a+crc -mtune=cortex-a57.cortex-a53
 endif
->>>>>>> 51cc38e... Build: add option for building kernel with graphite optimizations and ccache
+
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
