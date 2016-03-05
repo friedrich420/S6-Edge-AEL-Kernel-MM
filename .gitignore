@@ -38,6 +38,9 @@ modules.builtin
 *.dtb
 *.rej
 *.orig
+*.zip
+*.tar
+*.tar.md5
 *zImage
 *zImage-dtb
 *boot.img
@@ -51,6 +54,7 @@ scripts/recordmcount
 kernel/usr/*
 kernel/hz.bc
 Package/*
+output/
 
 #
 # Top-level generic files
