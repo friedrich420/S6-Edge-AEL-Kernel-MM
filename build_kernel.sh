@@ -194,10 +194,10 @@ else
 	AUDIO=""
 fi
 
-zip -r SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.zip .
-tar -H ustar -c boot.img > SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.tar
-md5sum -t SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.tar >> SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.tar
-mv SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.tar SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%y-%m-%d]`.tar.md5
+zip -r SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.zip .
+tar -H ustar -c boot.img > SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.tar
+md5sum -t SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.tar >> SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.tar
+mv SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.tar SM-$TARGET-$AUDIO-kernel-${GETVER}-`date +[%d-%m-%y]`.tar.md5
 
 echo
 echo "Done"
