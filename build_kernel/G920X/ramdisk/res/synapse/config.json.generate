@@ -1,0 +1,26 @@
+#!/system/bin/sh
+
+cat << CTAG
+
+{
+    sections: [
+                `. /res/synapse/config.json.generate.myabout`
+                `. /res/synapse/config.json.generate.little`
+		`. /res/synapse/config.json.generate.big`
+                `. /res/synapse/config.json.generate.cpugov`
+		`. /res/synapse/config.json.generate.memory`
+		`. /res/synapse/config.json.generate.gpu`
+		`. /res/synapse/config.json.generate.d2w`
+		`. /res/synapse/config.json.generate.led`
+		`. /res/synapse/config.json.generate.usb`
+		`. /res/synapse/config.json.generate.wakelock`
+		`. /res/synapse/config.json.generate.misc`
+		`. /res/synapse/config.json.generate.advanced`
+		`. /res/synapse/config.json.generate.logs`
+                `. /res/synapse/config.json.generate.reboot`
+                `. /res/synapse/config.json.generate.info`
+    ]
+
+}
+CTAG
+
