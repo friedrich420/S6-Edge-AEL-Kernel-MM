@@ -1,21 +1,23 @@
 #!/system/bin/sh
 
-config=/res/synapse/config.json
-action=/res/synapse/actions/
+BB=/system/xbin/busybox;
 
-if [ ! -f $config ]
-then
-    source /res/synapse/config.json.generate > $config
+CONFIG_JSON=/res/synapse/config.json
+ACTION_SCRIPTS=/res/synapse/actions/
+
+if [ ! -f $CONFIG_JSON ]; then
+	source /res/synapse/json.generate > $CONFIG_JSON
 fi
 
-case $1 in
-config)
-  cat $config
-  ;;
-configpath)
-  echo $config
-  ;;
-actionpath)
-  echo $action
-  ;;
-esac
+case "${1}" in
+  config)
+	cat $CONFIG_JSON;;
+  configpath)
+	echo $CONFIG_JSON;;
+  actionpath)
+	echo $ACTION_SCRIPTS:/sbin;;
+  reset)
+	$BB mount -t rootfs -o rw,remount rootfs;
+	$BB rm -f $CONFIG_JSON;
+	$BB mount -t rootfs -o rw,remount rootfs;;
+esac;
