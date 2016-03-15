@@ -11,7 +11,7 @@ fi;
 
 case $1 in
 cifs)
-  P=/res/synapse/SkyHigh/cifs
+  P=/data/media/0/hackerkernel/values/cifs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -29,7 +29,7 @@ cifs)
   ;;
 
 ntfs)
-  P=/res/synapse/SkyHigh/ntfs
+  P=/data/media/0/hackerkernel/values/ntfs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -47,7 +47,7 @@ ntfs)
   ;;
 
 isofs)
-  P=/res/synapse/SkyHigh/isofs
+  P=/data/media/0/hackerkernel/values/isofs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -64,7 +64,7 @@ isofs)
   fi
   ;;
 udf)
-  P=/res/synapse/SkyHigh/udf
+  P=/data/media/0/hackerkernel/values/udf
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -82,7 +82,7 @@ udf)
   ;;
 
 xpad)
-  P=/res/synapse/SkyHigh/xpad
+  P=/data/media/0/hackerkernel/values/xpad
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P

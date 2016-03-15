@@ -1,0 +1,35 @@
+#!/system/bin/sh
+
+cat << CTAG
+{
+    name:VOLTAGE CONTROL,
+    elements:[
+	`if [ -f "/sys/devices/system/cpu/cpufreq/vdd_table/vdd_levels" ]; then
+				
+		echo '{ SPane:{
+			title:"CPU Frequency Voltage",
+			description:" Decreasing voltages will lower heat and power consumption of the CPU. Increasing it on overclocked frequencies improves stability. Too low voltages may cause instability and freezes."
+		}},'
+			while read CPUFREQ VOLT UNIT; do
+				echo '{ SSeekBar:{
+					title:"'${CPUFREQ//mhz\:/}' MHz",
+					unit:"' ${UNIT}'",
+					min:80000,
+					max:137500,
+					step:500,
+					default:'$VOLT',
+					action:"voltage cpuvolt '${CPUFREQ}'"
+				}},
+				';
+					done < /sys/devices/system/cpu/cpufreq/vdd_table/vdd_levels;
+	fi`
+	{ SPane:{
+		title:"Voltage Info",
+	}},
+	{ SButton:{
+		label:"Show Voltage Table",
+		action:"show cpu"
+	}},
+	]
+}
+CTAG
